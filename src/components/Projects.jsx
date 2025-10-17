@@ -6,17 +6,17 @@ function Projects() {
     {
       title: 'Portfolio Website',
       description: 'A responsive personal portfolio built with React and EmailJS integration.',
-      link: 'https://your-portfolio-link.com',
+      link: 'https://ykelvis-portfolio.vercel.app/',
     },
     {
       title: 'To-Do App',
       description: 'A simple to-do list app built with React Hooks and local storage.',
-      link: 'https://your-todo-app-link.com',
+      link: '',
     },
     {
       title: 'Music Player UI',
       description: 'A Spotify-inspired music player interface using React components.',
-      link: 'https://your-musicplayer-link.com',
+      link: 'https://Spotify.com',
     },
   ];
 
