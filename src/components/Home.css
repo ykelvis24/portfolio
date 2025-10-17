@@ -1,0 +1,90 @@
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  text-align: center; 
+  background-color: white;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  padding: 0 20px;
+}
+
+.home-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.home-content h1 span {
+  color: #0077ff;
+}
+
+.home-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.home-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #0077ff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #005bb5;
+}
+
+body.dark-mode .home-section {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .home-content h1 {
+  color: #f0f0f0;
+}
+
+body.dark-mode .home-content h1 span {
+  color: #00bcd4;
+}
+
+body.dark-mode .home-content h2 {
+  color: #ccc;
+}
+
+body.dark-mode .home-content p {
+  color: #aaa;
+}
+
+body.dark-mode .cta-btn {
+  background-color: #00bcd4;
+}
+
+body.dark-mode .cta-btn:hover {
+  background-color: #0097a7;
+}
+
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 36px;
+  }
+  .home-content h2 {
+    font-size: 22px;
+  }
+  .home-content p {
+    font-size: 16px;
+  }
+}

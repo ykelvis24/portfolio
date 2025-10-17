@@ -1,0 +1,121 @@
+.about-section {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  flex-direction: column;
+}
+
+.about-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* ===========================
+   Typewriter Paragraph
+=========================== */
+.typing-text {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  color: #555;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #0077ff;
+  width: fit-content;
+  font-weight: 500;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 50% {
+    border-color: transparent;
+  }
+  51%, 100% {
+    border-color: #0077ff;
+  }
+}
+
+.about-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #0077ff;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  background-color: #0077ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.skills-list li:hover {
+  background-color: #005bb5;
+}
+
+/* ===========================
+   Dark Mode
+=========================== */
+body.dark-mode .about-section {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .about-content h2 {
+  color: #f0f0f0;
+}
+
+body.dark-mode .typing-text {
+  color: #00bcd4;
+  border-color: #00bcd4;
+}
+
+body.dark-mode .about-content h3 {
+  color: #00bcd4;
+}
+
+body.dark-mode .skills-list li {
+  background-color: #00bcd4;
+  color: #121212;
+}
+
+body.dark-mode .skills-list li:hover {
+  background-color: #0097a7;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 768px) {
+  .about-content h2 {
+    font-size: 28px;
+  }
+  .about-content h3 {
+    font-size: 20px;
+  }
+  .typing-text {
+    font-size: 16px;
+  }
+  .skills-list li {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
