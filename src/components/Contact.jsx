@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import {
   FaGithub,
@@ -12,32 +12,57 @@ import "./Contact.css";
 
 export const Contact = () => {
   const form = useRef();
+  const [sending, setSending] = useState(false);
+  const [messageStatus, setMessageStatus] = useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setSending(true);
+    setMessageStatus(null);
 
     emailjs
       .sendForm("service_e3o04ha", "template_7ompd3k", form.current, {
         publicKey: "rESGs7QO7iU2hjH_s",
       })
       .then(
-        () => console.log("SUCCESS!"),
-        (error) => console.log("FAILED...", error.text)
+        () => {
+          setSending(false);
+          setMessageStatus('success');
+          form.current.reset();
+        },
+        (error) => {
+          console.error('FAILED...', error.text);
+          setSending(false);
+          setMessageStatus('error');
+        },
       );
   };
 
   return (
     <div className="contact-container">
       <h2>Contact Me</h2>
-      
+
       <form ref={form} onSubmit={sendEmail} className="contact-form">
         <label>Name</label>
-        <input type="text" name="user_name" />
+        <input type="text" name="user_name" required />
         <label>Email</label>
-        <input type="email" name="user_email" />
+        <input type="email" name="user_email" required />
         <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
+        <textarea name="message" required />
+         <button type="submit" disabled={sending}>
+          {sending ? (
+            <div className="spinner"></div>
+          ) : (
+            'Send Message'
+          )}
+        </button>
+
+        {messageStatus === 'success' && (
+          <p className="success-message">✅ Message sent successfully!</p>
+        )}
+        {messageStatus === 'error' && (
+          <p className="error-message">❌ Failed to send. Please try again.</p>
+        )}
       </form>
 
       <div className="social-icons">
