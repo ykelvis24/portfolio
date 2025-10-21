@@ -1,0 +1,45 @@
+.redirect-container {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #222;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.redirect-container h2 {
+  font-size: 28px;
+  color: #0077ff;
+  margin-bottom: 15px;
+}
+
+.redirect-container p {
+  font-size: 18px;
+  color: #555;
+}
+
+.redirect-container span {
+  color: #0077ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.redirect-container span:hover {
+  color: #005bb5;
+}
+
+body.dark-mode .redirect-container {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .redirect-container h2 {
+  color: #00bcd4;
+}
+
+body.dark-mode .redirect-container span {
+  color: #00bcd4;
+}
